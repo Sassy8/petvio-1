@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:petvio/home-page.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -8,15 +9,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home:Material(
-        child: Center(
-          child: Container(
-            child: const Text("Hello Petivo :)"
-            ),
-          ),
-        ),
-      ),
+    return const MaterialApp(
+      home: HomePage(),
     );
   }
 }
