@@ -1,9 +1,5 @@
 // ignore: file_name
 
-
-
-
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:petvio/routes.dart';
@@ -103,7 +99,7 @@ class _LoginPageState extends State<LoginPage> {
               },
               child: Center(
                 child:Text(
-                  "Sign IN",
+                  "Sign In",
                   style: GoogleFonts.yanoneKaffeesatz(
                     fontSize: 18,
                     color: Colors.black,
