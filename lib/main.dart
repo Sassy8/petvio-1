@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:petvio/home-page.dart';
-import 'package:petvio/login-page.dart';
+
+import 'package:petvio/pages/home-page.dart';
+import 'package:petvio/pages/login-page.dart';
 import 'routes.dart';
 void main() {
   runApp(const MyApp());
