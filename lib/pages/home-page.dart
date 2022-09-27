@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,7 +14,18 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(items: []),
+    bottomNavigationBar: BottomNavigationBar(
+      items:  const [
+      BottomNavigationBarItem(icon: Icon(Icons.home), label: '',backgroundColor:  Color(0xfffe985b), ),
+      BottomNavigationBarItem(icon: Icon(Icons.pets), label: '', ),
+      BottomNavigationBarItem(icon: Icon(Icons.add), label:'',),
+      BottomNavigationBarItem(icon: Icon(Icons.message), label: '',),
+      BottomNavigationBarItem(icon: Icon(Icons.person), label: '',),
+      
+    ],
+      
+    
+    ) ,
       appBar: AppBar(
         backgroundColor: const Color(0xfffe985b),
         elevation: 12.0,
@@ -129,43 +142,76 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
+                    alignment: Alignment.center,
                     height: 60,
                     width: 80,
                     decoration: const BoxDecoration(
                         color: Color(0xFFFFE69A),
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        
+                        ),
+                    child: const Text(
+                      'Dogs',
+                      style: TextStyle(
+                      fontWeight:FontWeight.bold,
+                      ),
+                      ),   
                   ),
                   const SizedBox(
                     width: 5,
                   ),
                   Container(
+                    alignment: Alignment.center,
                     height: 60,
                     width: 80,
                     decoration: const BoxDecoration(
                         color:Color(0xFFAAC4FF),
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        ),
+                        child: const Text(
+                      'Cats',
+                      style: TextStyle(
+                      fontWeight:FontWeight.bold,
+                      ),
+                      ),
                   ),
                   const SizedBox(
                     width: 5,
                   ),
                   Container(
+                    alignment: Alignment.center,
                     height: 60,
                     width: 80,
                     decoration: const BoxDecoration(
                         color: Color(0xFFFA9494),
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        ),
+                        child: const Text(
+                      'Rabbits',
+                      style: TextStyle(
+                      fontWeight:FontWeight.bold,
+                      ),
+                      ),
                   ),
                   const SizedBox(
                     width: 5,
                   ),
                   Container(
+                    alignment: Alignment.center,
                     height: 60,
                     width: 80,
                     decoration: const BoxDecoration(
                         
                         color: Color(0xFFC3FF99),
                         // gradient: Gradient(colors: [Color()]),
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        ),
+                        child: const Text(
+                      'Birds',
+                      style: TextStyle(
+                      fontWeight:FontWeight.bold,
+                      ),
+                      ),
                   ),
                 ],
               ),
@@ -198,7 +244,7 @@ class _HomePageState extends State<HomePage> {
                         height: 200,
                         width: 280,
                         
-                        child: Image(image: AssetImage('assets/images/parrot.jpg'),
+                        child: Image(image: AssetImage('assets/images/dog 2.jpg'),
                         height: 200,
                         width: 400,
                         alignment: Alignment.topLeft,
@@ -251,19 +297,22 @@ class _HomePageState extends State<HomePage> {
                             
                             children: const [
                               Icon(
-                                Icons.heart_broken,
+                                Icons.info_sharp,
+                                color: Colors.red,
                               ),
                               SizedBox(
                                 height: 30,
                               ),
                               Icon(
-                                  Icons.heart_broken,
+                                  Icons.pets,
+                                  color: Colors.green,
                                 ),
                               SizedBox(
                                 height: 30,
                               ),
                               Icon(
-                                  Icons.heart_broken,
+                                  Icons.share,
+                                  color:  Color(0xfffe985b),
                                 ),
                             ],
                           ),
@@ -306,7 +355,7 @@ class _HomePageState extends State<HomePage> {
                         height: 200,
                         width: 280,
                         
-                        child: Image(image: AssetImage('assets/images/parrot.jpg'),
+                        child: Image(image: AssetImage('assets/images/cats 2.jpg'),
                         height: 200,
                         width: 400,
                         alignment: Alignment.topLeft,
@@ -321,9 +370,9 @@ class _HomePageState extends State<HomePage> {
                         Align(
                           alignment: Alignment.bottomLeft,
                           child: Padding(
-                            padding: const EdgeInsets.all(16.0),
+                            padding: const EdgeInsets.all(25.0),
                             child: Text(
-                              'Amelia',
+                              'Buzo',
                               style: GoogleFonts.mukta(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -342,7 +391,7 @@ class _HomePageState extends State<HomePage> {
                             padding: const EdgeInsets.all(16.0),
                             child: Text(
                               
-                              'Female\n3months',
+                              'Female\n2months',
                               maxLines: 2,
                               style: GoogleFonts.mukta(
                                 fontSize: 20,
@@ -359,19 +408,22 @@ class _HomePageState extends State<HomePage> {
                             
                             children: const [
                               Icon(
-                                Icons.heart_broken,
+                                Icons.info,
+                                color: Colors.red,
                               ),
                               SizedBox(
                                 height: 30,
                               ),
                               Icon(
-                                  Icons.heart_broken,
+                                  Icons.pets,
+                                  color: Colors.green,
                                 ),
                               SizedBox(
                                 height: 30,
                               ),
                               Icon(
-                                  Icons.heart_broken,
+                                  Icons.share,
+                                  color:Color(0xfffe985b),
                                 ),
                             ],
                           ),
@@ -410,7 +462,7 @@ class _HomePageState extends State<HomePage> {
                         height: 200,
                         width: 280,
                         
-                        child: Image(image: AssetImage('assets/images/parrot.jpg'),
+                        child: Image(image: AssetImage('assets/images/rabbit.png'),
                         height: 200,
                         width: 400,
                         alignment: Alignment.topLeft,
@@ -425,9 +477,9 @@ class _HomePageState extends State<HomePage> {
                         Align(
                           alignment: Alignment.bottomLeft,
                           child: Padding(
-                            padding: const EdgeInsets.all(16.0),
+                            padding: const EdgeInsets.all(20.0),
                             child: Text(
-                              'Amelia',
+                              'Oliver',
                               style: GoogleFonts.mukta(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -446,7 +498,7 @@ class _HomePageState extends State<HomePage> {
                             padding: const EdgeInsets.all(16.0),
                             child: Text(
                               
-                              'Female\n3months',
+                              'Male\n2months',
                               maxLines: 2,
                               style: GoogleFonts.mukta(
                                 fontSize: 20,
@@ -463,19 +515,22 @@ class _HomePageState extends State<HomePage> {
                             
                             children: const [
                               Icon(
-                                Icons.heart_broken,
+                                Icons.info,
+                                color: Colors.red,
                               ),
                               SizedBox(
                                 height: 30,
                               ),
                               Icon(
-                                  Icons.heart_broken,
+                                  Icons.pets,
+                                  color: Colors.green,
                                 ),
                               SizedBox(
                                 height: 30,
                               ),
                               Icon(
-                                  Icons.heart_broken,
+                                  Icons.share,
+                                  color: Color(0xfffe985b),
                                 ),
                             ],
                           ),
@@ -484,6 +539,116 @@ class _HomePageState extends State<HomePage> {
                     )
                   ],
                 ),
+              ),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            // 4th box 
+            Padding(
+              padding: const EdgeInsets.only(left: 10, right: 10),
+              child: Container(
+                
+                height: 200,
+                width: 500,
+                decoration:  BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(22),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Colors.grey,
+                      offset: Offset(1.0, 3.0), //(x,y)
+                      blurRadius: 5.0,
+                    ),
+                  ],
+                ),
+                child: Stack(
+                  alignment: Alignment.bottomLeft,
+                  children:[
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: const  SizedBox(
+                        height: 200,
+                        width: 280,
+                        
+                        child: Image(image: AssetImage('assets/images/parrot 2.jpg'),
+                        height: 200,
+                        width: 400,
+                        alignment: Alignment.topLeft,
+                        fit: BoxFit.fill,
+                        
+                        ),
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Align(
+                          alignment: Alignment.bottomLeft,
+                          child: Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Text(
+                              'Amber',
+                              style: GoogleFonts.mukta(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                        
+                              ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 80,
+                        ),
+                        Align(
+                          alignment: Alignment.bottomRight,
+                          child: Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Text(
+                              
+                              'Female\n5months',
+                              maxLines: 2,
+                              style: GoogleFonts.mukta(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                        
+                              ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(32.0),
+                          child: Column(
+                            
+                            children: const [
+                              Icon(
+                                Icons.info_sharp,
+                                color: Colors.red,
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Icon(
+                                  Icons.pets,
+                                  color: Colors.green,
+                                ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Icon(
+                                  Icons.share,
+                                  color:  Color(0xfffe985b),
+                                ),
+                            ],
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+                
               ),
             ),
           ],
