@@ -14,18 +14,35 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    bottomNavigationBar: BottomNavigationBar(
-      items:  const [
-      BottomNavigationBarItem(icon: Icon(Icons.home), label: '',backgroundColor:  Color(0xfffe985b), ),
-      BottomNavigationBarItem(icon: Icon(Icons.pets), label: '', ),
-      BottomNavigationBarItem(icon: Icon(Icons.add), label:'',),
-      BottomNavigationBarItem(icon: Icon(Icons.message), label: '',),
-      BottomNavigationBarItem(icon: Icon(Icons.person), label: '',),
-      
-    ],
-      
+    bottomNavigationBar: Container(
+      height: 60,
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20)
+        ),
+        boxShadow: [
+                    BoxShadow(
+                      color: Color(0xfffe985b),
+                      offset: Offset(2.0, 7.0), //(x,y)
+                      blurRadius: 5.0,
+                    ),
+                  ],
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: const [
+          Icon(Icons.home, color: Color(0xfffe985b) ,),
+          Icon(Icons.pets, color: Color(0xfffe985b) ,),
+          Icon(Icons.add, color: Color(0xfffe985b) ,),
+          Icon(Icons.message, color: Color(0xfffe985b) ,),
+          Icon(Icons.person, color: Color(0xfffe985b) ,),
+          
+        ],
+      ),
+    ),
     
-    ) ,
       appBar: AppBar(
         backgroundColor: const Color(0xfffe985b),
         elevation: 12.0,
@@ -655,7 +672,92 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       backgroundColor: const Color(0xffFFF4CF),
-      drawer: const Drawer(),
+      drawer: Drawer(
+        child: ListView(
+          padding: const EdgeInsets.all(0),
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color:  Color(0xfffe985b),
+                borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(20),
+          bottomRight: Radius.circular(20)
+        ),
+                boxShadow:  [
+                    BoxShadow(
+                      color: Color(0xfffe985b),
+                      offset: Offset(2.0, 7.0), //(x,y)
+                      blurRadius: 5.0,
+                    ),
+                  ],
+              ), 
+              
+              child:  UserAccountsDrawerHeader(
+                decoration: BoxDecoration(color: Color(0xfffe985b),),
+                accountName: Text(
+                  "Karterina Samsovana",
+                  style: TextStyle(fontSize: 18),
+                ),
+                accountEmail: Text("KarterinaS990@gmail.com"),
+                currentAccountPictureSize: Size.square(50),
+                currentAccountPicture: CircleAvatar(
+                  backgroundColor: Color.fromARGB(255, 251, 78, 4),
+                  child: Image(image: AssetImage('assets/images/pp1.png')) //Text
+                ), //circleAvatar
+              ), //UserAccountDrawerHeader
+            ), //DrawerHeader
+            ListTile(
+              leading: const Icon(Icons.person, color:Color(0xfffe985b) ,),
+              title: const Text(' My Profile '),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.pets_outlined,
+              color:Color(0xfffe985b) ,),
+              title: const Text('Near By Vet '),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.shop,
+              color:Color(0xfffe985b) ,),
+              title: const Text(' Shop'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.emoji_emotions,
+              color:Color(0xfffe985b) ,),
+              title: const Text('About Us'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.call,
+              color:Color(0xfffe985b) ,),
+              title: const Text(' Contact Us '),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.logout,
+              color:Color(0xfffe985b) ,),
+              title: const Text('LogOut'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ), //Deawer
+      
+        
     );
   }
 }
